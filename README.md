@@ -23,9 +23,23 @@ A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routi
 - **Security ACL** – extended ACL blocking direct traffic between HR (VLAN 20) and Sales (VLAN 30)
 - **Internet Edge Simulation** – static default routing between the core router and ISP router
 
+## IP & VLAN Addressing Summary
+
+| VLAN | Department | Subnet           | Gateway (HSRP VIP) |
+|------|------------|-------------------|----------------------|
+| 10   | IT         | 192.168.10.0/24   | 192.168.10.1         |
+| 20   | HR         | 192.168.20.0/24   | 192.168.20.1         |
+| 30   | Sales      | 192.168.30.0/24   | 192.168.30.1         |
+
+## Documentation
+
+- 📋 [Full configuration verification & screenshots](Configurations/README.md)
+- 📦 [How to open this project in Packet Tracer](Lab-file/README.md)
+
 ## Skills Demonstrated
 
 `Switching` · `VLANs` · `Inter-VLAN Routing` · `OSPF` · `HSRP` · `DHCP` · `Access Control Lists` · `Network Redundancy` · `Cisco IOS Configuration`
 
 ---
-*Built and documented as part of a personal network engineering practice project.*
+Built and documented by **Tohanur Islam** as part of a personal network engineering practice project.
+[GitHub](https://github.com/tohanur-net)
