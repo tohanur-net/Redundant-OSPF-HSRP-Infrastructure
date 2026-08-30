@@ -12,6 +12,7 @@
 8. [Dynamic Routing (OSPF) & Default Route Propagation](#8-dynamic-routing-ospf-area-0--default-route-propagation)
 9. [Centralized DHCP Service Configuration](#9-centralized-dhcp-service-configuration)
 10. [Inter-VLAN Traffic Filtering (ACLs)](#10-inter-vlan-traffic-filtering-extended-access-control-lists)
+11. [Network Address Translation (NAT) Overload](#11-Network-Address-Translation-NAT-PAT-Overload)
 
 ---
 
@@ -178,3 +179,9 @@
     ![L3-SW2 Extended ACL](./Images/28.ACL,L3-SW2.png)
 
 ---
+
+## 11. Network Address Translation (NAT) PAT Overload
+
+* **PAT (NAT overload) on R1**:
+* Translating internal VLAN traffic (IT, HR, Sales) and inter-router transit links to the ISP-facing interface for internet access
+  ![R1 NAT/PAT](./Images/31.NAT,R1.png)
