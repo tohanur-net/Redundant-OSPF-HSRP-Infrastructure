@@ -2,7 +2,7 @@
 
 ## 1. Network Architecture & Topology
 
-![Complete Network Topology](./TOPOLOGY.png)
+![Complete Network Topology](./Images/TOPOLOGY.png)
 
 **Core Interconnections & IP Addressing Scheme**
 
