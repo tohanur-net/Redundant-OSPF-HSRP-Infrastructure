@@ -22,6 +22,7 @@ A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routi
 - **DHCP Services** – centralized DHCP pools for IT, HR, and Sales, relayed via `ip helper-address`
 - **Security ACL** – extended ACL blocking direct traffic between HR (VLAN 20) and Sales (VLAN 30)
 - **Internet Edge Simulation** – static default routing between the core router and ISP router
+- **Internet Access (NAT)** – PAT (NAT overload) on R1, translating internal VLAN traffic (IT, HR, Sales) and inter-router transit links to the ISP-facing interface for internet access
 
 ## IP & VLAN Addressing Summary
 
