@@ -1,25 +1,35 @@
 # Network Verification & Architecture Documentation
 
+## Table of Contents
+
+1. [Network Architecture & Topology](#1-network-architecture--topology)
+2. [Access Layer VLANs](#2-access-layer-vlans-show-vlan-brief)
+3. [STP Security](#3-stp-security-portfast--bpdu-guard)
+4. [Trunking Links](#4-trunking-links-show-interfaces-trunk)
+5. [Layer 3 Switch SVIs](#5-layer-3-switch-svis-show-ip-interface-brief)
+6. [HSRP First-Hop Redundancy](#6-hsrp-first-hop-redundancy-show-standby-brief)
+7. [Spanning Tree Root Placement](#7-spanning-tree-root-placement-show-spanning-tree-vlan-x)
+8. [Dynamic Routing (OSPF) & Default Route Propagation](#8-dynamic-routing-ospf-area-0--default-route-propagation)
+9. [Centralized DHCP Service Configuration](#9-centralized-dhcp-service-configuration)
+10. [Inter-VLAN Traffic Filtering (ACLs)](#10-inter-vlan-traffic-filtering-extended-access-control-lists)
+
+---
+
 ## 1. Network Architecture & Topology
 
 ![Complete Network Topology](./Images/TOPOLOGY.png)
 
 **Core Interconnections & IP Addressing Scheme**
 
-* **Access Layer to Core/Distribution**:
-  * **SW1** (VLAN 10 - IT): Trunked via `Fa0/6` $\rightarrow$ `L3-SW1` (`Fa0/1`) and `Fa0/7` $\rightarrow$ `L3-SW2` (`Fa0/1`).
-  * **SW2** (VLAN 20 - HR): Trunked via `Fa0/6` $\rightarrow$ `L3-SW1` (`Fa0/2`) and `Fa0/7` $\rightarrow$ `L3-SW2` (`Fa0/2`).
-  * **SW3** (VLAN 30 - SALES): Trunked via `Fa0/6` $\rightarrow$ `L3-SW1` (`Fa0/3`) and `Fa0/7` $\rightarrow$ `L3-SW2` (`Fa0/3`).
-
-* **Core Trunk Interconnect**:
-  * **L3-SW1** $\leftrightarrow$ **L3-SW2**: Interconnected via `Gig0/1` trunk for inter-switch communications, HSRP monitoring, and STP redundancy.
-
-* **Core Layer to Edge Router (R1)**:
-  * **L3-SW1** (`Gig0/2` | `10.10.10.2/30`) $\leftrightarrow$ **R1** (`Gig0/0` | `10.10.10.1/30`)
-  * **L3-SW2** (`Gig0/2` | `10.10.20.2/30`) $\leftrightarrow$ **R1** (`Gig1/0` | `10.10.20.1/30`)
-
-* **Edge Router (R1) to ISP Gateway (R2)**:
-  * **R1** (`Gig2/0` | `10.10.30.2/30`) $\leftrightarrow$ **ISP R2** (`Gig0/0` | `10.10.30.1/30`)
+| Device / Link | Interface(s) | IP / Subnet | Connects To |
+|---|---|---|---|
+| **SW1** (VLAN 10 – IT) | Fa0/6, Fa0/7 | trunk | L3-SW1 (Fa0/1), L3-SW2 (Fa0/1) |
+| **SW2** (VLAN 20 – HR) | Fa0/6, Fa0/7 | trunk | L3-SW1 (Fa0/2), L3-SW2 (Fa0/2) |
+| **SW3** (VLAN 30 – Sales) | Fa0/6, Fa0/7 | trunk | L3-SW1 (Fa0/3), L3-SW2 (Fa0/3) |
+| **L3-SW1 ↔ L3-SW2** | Gig0/1 | trunk | Inter-switch link – HSRP monitoring, STP redundancy |
+| **L3-SW1 → R1** | Gig0/2 → Gig0/0 | 10.10.10.2/30 → 10.10.10.1/30 | Core to edge router |
+| **L3-SW2 → R1** | Gig0/2 → Gig1/0 | 10.10.20.2/30 → 10.10.20.1/30 | Core to edge router |
+| **R1 → ISP R2** | Gig2/0 → Gig0/0 | 10.10.30.2/30 → 10.10.30.1/30 | Edge router to ISP gateway |
 
 ---
 
@@ -166,3 +176,5 @@
 * **L3-SW2 Extended ACL (`BLOCK20_TO_30`)**:
   * Symmetrically configured across both core switches for full redundant enforcement.  
     ![L3-SW2 Extended ACL](./Images/28.ACL,L3-SW2.png)
+
+---
