@@ -21,12 +21,6 @@ A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routi
 - **Security ACL** – extended ACL blocking direct traffic between HR (VLAN 20) and Sales (VLAN 30)
 - **Internet Edge Simulation** – static default routing between the core router and ISP router
 
-## How to Open
-
-1. Install [Cisco Packet Tracer](https://www.netacad.com/courses/packet-tracer) (free with a Netacad account).
-2. Download [`Redundant-OSPF-HSRP-Infrastructure.pkt`](./Redundant-OSPF-HSRP-Infrastructure.pkt) from this repo.
-3. Open it in Packet Tracer to explore the topology, device configs, and test connectivity.
-
 ## Skills Demonstrated
 
 `Switching` · `VLANs` · `Inter-VLAN Routing` · `OSPF` · `HSRP` · `DHCP` · `Access Control Lists` · `Network Redundancy` · `Cisco IOS Configuration`
