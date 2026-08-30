@@ -1,6 +1,6 @@
 # Redundant-OSPF-HSRP-Infrastructure
 
-![Complete Network Topology](./Images/TOPOLOGY.png)
+![Complete Network Topology](Configurations/Images/TOPOLOGY.png)
 
 A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routing, switching, redundancy, and security fundamentals.
 
