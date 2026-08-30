@@ -24,7 +24,7 @@ A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routi
 ## How to Open
 
 1. Install [Cisco Packet Tracer](https://www.netacad.com/courses/packet-tracer) (free with a Netacad account).
-2. Download [`Redundant-OSPF-HSRP-Infrastructure`]([./Net.v1.test.pkt](https://github.com/tohanur-net/Redundant-OSPF-HSRP-Infrastructure/blob/main/Redundant-OSPF-HSRP-Infrastructure.pkt)) from this repo.
+2. Download [`Redundant-OSPF-HSRP-Infrastructure`] from this repo.
 3. Open it in Packet Tracer to explore the topology, device configs, and test connectivity.
 
 ## Skills Demonstrated
