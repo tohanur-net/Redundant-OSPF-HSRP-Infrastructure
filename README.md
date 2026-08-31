@@ -4,14 +4,6 @@
 
 A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routing, switching, redundancy, and security fundamentals.
 
-## Topology Overview
-
-- **3x Access Switches** (2960-24TT) – SW1, SW2, SW3, each serving one department VLAN
-- **2x Distribution Layer 3 Switches** (3560-24PS) – L3-SW1, L3-SW2, running redundant gateways
-- **1x Core Router** (R1) – routes between the internal network and the ISP
-- **1x ISP Router** – simulates the internet edge
-- **6x PCs** – two per department (IT, HR, Sales), mixed static/DHCP
-
 ## Key Features Implemented
 
 - **VLAN Segmentation** – IT (VLAN 10), HR (VLAN 20), Sales (VLAN 30)
@@ -23,6 +15,14 @@ A simulated enterprise LAN/WAN built in Cisco Packet Tracer, demonstrating routi
 - **Security ACL** – extended ACL blocking direct traffic between HR (VLAN 20) and Sales (VLAN 30)
 - **Internet Edge Simulation** – static default routing between the core router and ISP router
 - **Internet Access (NAT)** – PAT (NAT overload) on R1, translating internal VLAN traffic (IT, HR, Sales) and inter-router transit links to the ISP-facing interface for internet access
+
+## Topology Overview
+
+- **3x Access Switches** (2960-24TT) – SW1, SW2, SW3, each serving one department VLAN
+- **2x Distribution Layer 3 Switches** (3560-24PS) – L3-SW1, L3-SW2, running redundant gateways
+- **1x Core Router** (R1) – routes between the internal network and the ISP
+- **1x ISP Router** – simulates the internet edge
+- **6x PCs** – two per department (IT, HR, Sales), mixed static/DHCP
 
 ## IP & VLAN Addressing Summary
 
